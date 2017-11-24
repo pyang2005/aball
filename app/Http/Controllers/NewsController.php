@@ -29,6 +29,7 @@ class NewsController extends Controller
                 $new->image = current($image);
             }
         });
+        return json_encode($news,JSON_UNESCAPED_UNICODE);
     	// $news = DB::table('ab_news')->paginate(5);
         return view('news.index', ['news' => $news]);
     }
